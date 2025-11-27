@@ -23,12 +23,12 @@ export default function Landing() {
       <section id="media" className="py-12 container mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-3xl font-extrabold text-white">AQUÍ IRÁ LA SECCIÓN DE HISTORIA</h2>
-            <p className="mt-4 text-gray-400">(Contenido placeholder — aquí irá la historia / lore. Tú la completarás más tarde.)</p>
+            <h2 className="text-3xl font-extrabold text-white">SECCIÓN HISTORIA</h2>
+            <p className="mt-4 text-gray-400"></p>
           </div>
 
           <div>
-            <Trailer />
+            <Trailer src="/videos/trailer.mp4" />
           </div>
         </div>
       </section>
@@ -36,8 +36,11 @@ export default function Landing() {
       <section id="characters" className="py-12 container mx-auto px-6 md:px-12">
         <h3 className="text-2xl font-bold text-white mb-6">PERSONAJES Y ARTE DEL JUEGO</h3>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* ================================== */}
+        {/* PERSONAJES - CARRUSELES EXISTENTES */}
+        {/* ================================== */}
 
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           {/* CARRUSEL IZQUIERDO */}
           <div>
             <h4 className="text-xl font-semibold text-white mb-4">
@@ -47,10 +50,10 @@ export default function Landing() {
             <div className="w-full h-64 md:h-80">
               <Carousel
                 images={[
-                  "/imgs/pc_yellow_1.png",
-                  "/imgs/pc_yellow_2.png",
-                  "/imgs/pc_yellow_3.png",
-                  "/imgs/pc_yellow_4.png"
+                  { src: "/imgs/pc_yellow_1.png", caption: "" },
+                  { src: "/imgs/pc_yellow_2.png", caption: "" },
+                  { src: "/imgs/pc_yellow_3.png", caption: "" },
+                  { src: "/imgs/pc_yellow_4.png", caption: "" },
                 ]}
               />
             </div>
@@ -65,18 +68,143 @@ export default function Landing() {
             <div className="w-full h-64 md:h-80">
               <Carousel
                 images={[
-                  "/imgs/pc_gray_4.png",
-                  "/imgs/pc_gray_3.png",
-                  "/imgs/pc_gray_2.png",
-                  "/imgs/pc_gray_1.png"
+                  { src: "/imgs/pc_gray_4.png", caption: "" },
+                  { src: "/imgs/pc_gray_3.png", caption: "" },
+                  { src: "/imgs/pc_gray_2.png", caption: "" },
+                  { src: "/imgs/pc_gray_1.png", caption: "" },
                 ]}
               />
             </div>
           </div>
-
         </div>
 
+        {/* ====================== */}
+        {/* CONTENEDORES AGREGADOS */}
+        {/* ====================== */}
+
+        {/* ENEMIGOS */}
+        <section id="enemigos" className="py-10">
+          <h3 className="text-2xl font-bold text-white mb-6">Enemigos</h3>
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {/* ENEMIGO 1 */}
+            <div className="bg-neutral-900/40 border border-neutral-800 rounded-xl overflow-hidden p-4">
+              <h4 className="text-xl font-semibold text-white mb-3">Enemigo 1 — Maleante Mutado</h4>
+
+              <div className="w-full h-64 bg-black/30 rounded-lg overflow-hidden flex items-center justify-center">
+                <img
+                  src="/imgs/enemigo_1.gif"
+                  alt="Enemigo 1"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <p className="mt-3 text-gray-300 text-sm">
+                Habitante de mala muerte de la zona de exclusión, mutado de tal manera que su forma humana aun es distinguible, usando esa psedo-apariencia para atacar a sus victimas.
+              </p>
+            </div>
+
+            {/* ENEMIGO 2 */}
+            <div className="bg-neutral-900/40 border border-neutral-800 rounded-xl overflow-hidden p-4">
+              <h4 className="text-xl font-semibold text-white mb-3">Enemigo 2 — Cholita Mutada</h4>
+
+              <div className="w-full h-64 bg-black/30 rounded-lg overflow-hidden flex items-center justify-center">
+                <img
+                  src="/imgs/enemigo_2.gif"
+                  alt="Enemigo 2"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <p className="mt-3 text-gray-300 text-sm">
+                Ex habitante de la zona de exclusión, anteriormente una mujer normal trabajadora, ahora mutada mas allá del reconocimiento, .
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+
+        {/* OBJETOS */}
+        <section id="objetos" className="py-10">
+          <h3 className="text-2xl font-bold text-white mb-6">Objetos</h3>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* CARRUSEL ARMAS */}
+            <div id="objetos-armas">
+              <h4 className="text-xl font-semibold text-white mb-4">Armas</h4>
+              <div className="w-full h-128 md:h-80">
+                <Carousel
+                  images={[
+                    { src: "/imgs/686.png", caption: "Escopeta Beretta 686" },
+                    { src: "/imgs/AK.png", caption: "Fusil de asalto AK-47" },
+                    { src: "/imgs/aug.png", caption: "Fusil Bullpup STYER AUG" },
+                    { src: "/imgs/fn.png", caption: "Fusil de batalla FN FAL" },
+                    { src: "/imgs/g3.png", caption: "Fusil de batalla HK G3" },
+                    { src: "/imgs/glock.png", caption: "Pistola de 45 ACP Glock 19" },
+                    { src: "/imgs/fs.png", caption: "Pistola de 9mm Beretta 92 FS" },
+                    { src: "/imgs/uzi.png", caption: "Subfusil de 9mm UZI" },
+                    { src: "/imgs/vector.png", caption: "Subfusil de 45 ACP Kriss Vector" },
+                  ]}
+                />
+              </div>
+            </div>
+
+            {/* CARRUSEL UTILIZABLES */}
+            <div id="objetos-utilizables">
+              <h4 className="text-xl font-semibold text-white mb-4">Utilizables</h4>
+              <div className="w-full h-64 md:h-80">
+                <Carousel
+                  images={[
+                    { src: "/imgs/ifak.png", caption: "Botiquin de Primeros Auxilios Individual" },
+                    { src: "/imgs/pastillas.png", caption: "Contenedor de betabloqueadores" },
+                    { src: "/imgs/hypo.png", caption: "Hiperestimulante: incrementan vida maxima" },
+                    { src: "/imgs/stim.png", caption: "Injector de salud: cura una determinada porición de salud" },
+                  ]}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* CAPTURA DE IMÁGENES */}
+        <section id="capturas" className="py-10">
+          <h3 className="text-2xl font-bold text-white mb-6">Capturas de Imágenes</h3>
+        </section>
+
+        {/* ESCULPIDO */}
+        <section id="esculpido" className="py-10">
+          <h3 className="text-2xl font-bold text-white mb-6">Esculpido</h3>
+          <h4 className="text-xl font-semibold text-white mb-3">Capturado de Imagenes</h4>
+
+          <div className="w-full h-64 md:h-80">
+                <Carousel
+                  images={[
+                    { src: "/imgs/frame-00000.jpg", caption: "Lateral Izquierda" },
+                    { src: "/imgs/frame-00001.jpg", caption: "Posterior" },
+                    { src: "/imgs/frame-00002.jpg", caption: "Lateral Derecho" },
+                    { src: "/imgs/frame-00006.jpg", caption: "Frontal" },
+                  ]}
+                />
+          </div>
+
+          <p className="mt-3 text-gray-300 text-sm">
+            El proceso de captura se realiza mediante el fotografiado de 4 imagenes, frontal, posterior, laterales izquierdo y derecho.
+            Cada movimiento tiene 3 frames de accion, 1 que es la base, los otros 2 son el movimiento final e intermedio.
+
+            Este mismo proceso se realizo para capa personaje tomando en cuenta los mismos angulos, direcciones, fondos y condiciones de luz.
+          </p>
+        </section>
+
+        {/* BACKSTAGE */}
+        <section id="backstage" className="py-10">
+          <h3 className="text-2xl font-bold text-white mb-6">Backstage</h3>
+        </section>
+
       </section>
+
 
 
 
