@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="100%" height="100%" fill="#020202" />
+  <g fill="#7FCDFF" opacity="0.14">
+    <circle cx="300" cy="150" r="200" />
+    <circle cx="900" cy="500" r="230" />
+  </g>
+  <g fill="#fff" opacity="0.06">
+    <rect x="0" y="0" width="1200" height="675" />
+  </g>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="28" fill="#ddd">Trailer preview</text>
+</svg>
