@@ -3,7 +3,9 @@ import Header from "../components/Header";
 import FeatureCard from "../components/FeatureCard";
 import Trailer from "../components/Trailer";
 import CTA from "../components/CTA";
+import MecanicaCard from "../components/MecanicaCard";
 import { Eye, Footprints, Ghost } from "lucide-react";
+
 
 export default function Landing() {
   return (
@@ -51,6 +53,31 @@ export default function Landing() {
           <div className="bg-neutral-900/40 p-4 rounded-xl border border-neutral-800 flex items-center justify-center text-gray-400">AQUÍ IRARÁ PERSONAJE 3</div>
         </div>
       </section>
+
+        
+<section className="py-12 container mx-auto px-6 md:px-12">
+  <h3 className="text-2xl font-bold text-white mb-6">Mecánicas</h3>
+
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <MecanicaCard
+      titulo="Ataque"
+      imagenes={["/pagina/ataques.png", "/pagina/ataques2.png", "/pagina/ataques3.png"]}
+      descripcion="Puedes realizar ataques a cada parte del cuerpo del enemigo, piensa bien donde atacar para acabar con EL."
+    />
+    <MecanicaCard
+      titulo="Estrategia"
+      imagenes={["/pagina/estrategia.png"]}
+      descripcion="Cada enemigo es diferente, adapta tu estrategia para vencerlos a todos."
+    />
+    <MecanicaCard
+      titulo="Turnos"
+      imagenes={["/pagina/turnos.png", "/pagina/ataques.png"]}
+      descripcion="Piensa bien en tus acciones y en tus ataques, pueden costarte la partida. MIDE BIEN TUS MOVIMIENTOS."
+    />
+  
+  </div>
+</section>
+
 
       <section id="download" className="py-12 container mx-auto px-6 md:px-12">
         <CTA />
