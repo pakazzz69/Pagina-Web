@@ -12,22 +12,32 @@ export default function Trailer({ src }: TrailerProps) {
 
   return (
     <>
-      {/* Thumbnail */}
+      {/* Video Preview */}
       <div
-        className="relative max-w-4xl mx-auto rounded-xl overflow-hidden cursor-pointer"
+        className="relative w-full aspect-video rounded-xl overflow-hidden cursor-pointer group"
         role="button"
         onClick={() => setOpen(true)}
       >
-        <img
-          src="/src/assets/trailer-thumb.svg"
-          alt="Trailer thumbnail"
-          className="w-full h-auto object-cover"
-        />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-          <div className="p-4 bg-red-700 rounded-full shadow-lg">
-            <Play color="#fff" size={28} />
-          </div>
-          <div className="absolute bottom-4 left-4 text-sm text-gray-200 bg-black/50 px-3 py-1 rounded">
+        {isMp4 ? (
+          <video
+            src={src}
+            className="w-full h-full object-cover"
+            muted
+            loop
+            preload="metadata"
+          />
+        ) : (
+          <iframe
+            className="w-full h-full"
+            src={src ?? "https://www.youtube.com/embed/dQw4w9WgXcQ"}
+            title="Trailer"
+            allowFullScreen
+          />
+        )}
+        
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors duration-300">
+          <div className="p-4 bg-red-700 rounded-full shadow-lg group-hover:bg-red-600 group-hover:scale-110 transition-all duration-300">
+            <Play color="#fff" size={32} />
           </div>
         </div>
       </div>
@@ -61,7 +71,7 @@ export default function Trailer({ src }: TrailerProps) {
             </div>
             <button
               aria-label="Cerrar"
-              className="absolute right-4 top-4 text-white text-2xl font-bold"
+              className="absolute right-4 top-4 text-white text-2xl font-bold hover:text-red-500 transition-colors"
               onClick={() => setOpen(false)}
             >
               ✕

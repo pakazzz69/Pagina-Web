@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type CarouselItem = {
   src: string;
@@ -8,7 +9,7 @@ type CarouselItem = {
 const Carousel = ({
   images = [] as CarouselItem[],
   autoPlay = true,
-  autoPlayTime = 3000,
+  autoPlayTime = 5000,
 }) => {
   const [index, setIndex] = useState(0);
 
@@ -21,50 +22,64 @@ const Carousel = ({
     return () => clearInterval(interval);
   }, [index, autoPlay, autoPlayTime]);
 
+  if (images.length === 0) {
+    return <div className="w-full h-96 bg-black/30 rounded-2xl flex items-center justify-center text-gray-500">Sin imágenes</div>;
+  }
+
   return (
-    <div className="relative w-full max-w-3xl h-72 md:h-96 mx-auto overflow-hidden rounded-2xl shadow-xl">
+    <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl group">
+      {/* Image Container */}
+      <div className="relative w-full h-full bg-black">
+        <img
+          src={images[index].src}
+          alt={images[index].caption ?? `Imagen ${index + 1}`}
+          className="w-full h-full object-contain transition-opacity duration-500"
+        />
 
-      {/* Imagen */}
-      <img
-        src={images[index].src}
-        alt={images[index].caption ?? ""}
-        className="w-full h-full object-contain object-center transition-opacity duration-500 bg-black"
-      />
+        {/* Caption */}
+        {images[index].caption && (
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+            <p className="text-white font-semibold text-lg">{images[index].caption}</p>
+          </div>
+        )}
+      </div>
 
-      {/* Descripción */}
-      {images[index].caption && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white text-sm px-4 py-2 rounded-md">
-          {images[index].caption}
-        </div>
-      )}
-
-      {/* Botón izquierdo */}
+      {/* Navigation Buttons */}
       <button
         onClick={prev}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white text-3xl px-3 py-1 rounded-full"
+        aria-label="Imagen anterior"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all transform hover:scale-110 opacity-0 group-hover:opacity-100 duration-300"
       >
-        ❮
+        <ChevronLeft size={24} />
       </button>
 
-      {/* Botón derecho */}
       <button
         onClick={next}
-        className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white text-3xl px-3 py-1 rounded-full"
+        aria-label="Imagen siguiente"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all transform hover:scale-110 opacity-0 group-hover:opacity-100 duration-300"
       >
-        ❯
+        <ChevronRight size={24} />
       </button>
 
-      {/* Dots */}
-      <div className="absolute bottom-3 w-full flex justify-center gap-2">
+      {/* Dot Indicators */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 justify-center">
         {images.map((_, i) => (
           <button
             key={i}
-            className={`w-3 h-3 rounded-full transition-all ${
-              i === index ? "bg-white scale-110" : "bg-white/50"
-            }`}
+            aria-label={`Ir a imagen ${i + 1}`}
             onClick={() => setIndex(i)}
+            className={`h-2 rounded-full transition-all ${
+              i === index 
+                ? "bg-white w-8" 
+                : "bg-white/50 w-2 hover:bg-white/75"
+            }`}
           />
         ))}
+      </div>
+
+      {/* Image Counter */}
+      <div className="absolute top-4 right-4 bg-black/60 text-white text-sm font-semibold px-3 py-1 rounded-full">
+        {index + 1} / {images.length}
       </div>
     </div>
   );
