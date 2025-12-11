@@ -2,8 +2,8 @@ import Trailer from "./Trailer";
 
 export default function TrailerSection() {
   const trailers = [
-    { id: 1, src: "/videos/trailer.mp4", title: "Tráiler Principal" },
-    { id: 2, src: "/videos/trailer2.mp4", title: "Gameplay Reveal" },
+    { id: 1, src: "/videos/trailer.mp4", title: "Teaser" },
+    { id: 2, src: "/videos/trailer2.mp4", title: "Tráiler Principal" },
   ];
 
   return (
@@ -11,7 +11,7 @@ export default function TrailerSection() {
       <div className="mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Mira los Tráilers</h2>
         <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-          Descubre el mundo oscuro y fascinante de NOCTURNA. Prepárate para una experiencia que desafiará tus límites psicológicos.
+          Descubre el mundo oscuro y fascinante de DARK INCURSION.
         </p>
       </div>
 

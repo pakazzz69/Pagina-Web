@@ -20,7 +20,7 @@ export default function Header() {
           <div className="w-10 h-10 bg-gradient-to-br from-red-700 to-red-900 rounded-lg flex items-center justify-center text-white group-hover:shadow-lg group-hover:shadow-red-700/50 transition-all">
             <Gamepad2 size={20} />
           </div>
-          <div className="text-white font-bold text-lg tracking-tight hidden sm:block">NOCTURNA</div>
+          <div className="text-white font-bold text-lg tracking-tight hidden sm:block">DARK INCURSION</div>
         </a>
 
         {/* Desktop Navigation */}

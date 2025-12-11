@@ -1,4 +1,4 @@
-import { ShoppingCart, Download, Zap, Flame, Gift } from "lucide-react";
+import { Download, Zap, Flame, Gift } from "lucide-react";
 
 export default function CTA() {
   return (
@@ -6,7 +6,7 @@ export default function CTA() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Prepárate para la Oscuridad</h2>
-          <p className="text-xl text-gray-300">Pre-ordena NOCTURNA y recibe beneficios exclusivos</p>
+          <p className="text-xl text-gray-300">Descarga DARK INCURSION y recibe beneficios exclusivos</p>
         </div>
 
         {/* Benefits Grid */}

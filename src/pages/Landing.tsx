@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import FeaturesSection from "../components/FeaturesSection";
 import TrailerSection from "../components/TrailerSection";
 import CharactersSection from "../components/CharactersSection";
+import CarruselMecanicas from "../components/CarruselMecanicas";
 
 import Footer from "../components/Footer";
 
@@ -14,6 +15,7 @@ export default function Landing() {
       <FeaturesSection />
       <TrailerSection />
       <CharactersSection />
+      <CarruselMecanicas />
       
       <Footer />
     </main>

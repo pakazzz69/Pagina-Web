@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center text-white">
                 <Gamepad2 size={20} />
               </div>
-              <h3 className="text-xl font-bold text-white">NOCTURNA</h3>
+              <h3 className="text-xl font-bold text-white">DARK INCURSION</h3>
             </div>
             <p className="text-gray-400 text-sm">Una experiencia de terror psicológico inmersiva.</p>
           </div>
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-          <p>&copy; 2026 NOCTURNA. Todos los derechos reservados.</p>
+          <p>&copy; 2026 DARK INCURSION. Todos los derechos reservados.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition">Política de Privacidad</a>
             <a href="#" className="hover:text-white transition">Términos de Servicio</a>

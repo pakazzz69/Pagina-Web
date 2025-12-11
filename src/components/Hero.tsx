@@ -22,13 +22,13 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-900/30 border border-red-700/50 rounded-full text-red-400 text-xs font-semibold uppercase tracking-widest mb-8">
             <Zap size={14} />
-            Próximamente Disponible
+            CHANGUITO STUDIOS
           </div>
 
           {/* Title */}
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-tight text-white drop-shadow-2xl tracking-tighter mb-6">
             <span className="bg-gradient-to-r from-white via-red-100 to-red-400 bg-clip-text text-transparent">
-              NOCTURNA
+              DARK INCURSION
             </span>
           </h1>
 
@@ -59,7 +59,7 @@ export default function Hero() {
           {/* Trust/Status Line */}
           <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
             <div className="w-2 h-2 rounded-full bg-green-500"></div>
-            <span>En desarrollo activo • Lanzamiento Q1 2026</span>
+            
           </div>
         </div>
       </div>
